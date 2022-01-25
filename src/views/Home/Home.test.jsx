@@ -34,3 +34,15 @@ test('Should render the user profile', () => {
   expect(userColor).toBeInTheDocument()
   expect(userLikes.children.length).toEqual(likes.length)
 })
+
+test('Should pass a user object with properties to be tested', () => {
+  render(<Home user={user} />)
+
+  expect(user).toHaveProperty('id')
+  expect(user).toHaveProperty('name')
+  expect(user).toHaveProperty('avatar')
+  expect(user).toHaveProperty('header')
+  expect(user).toHaveProperty('likes')
+  expect(user).toHaveProperty('motto')
+  expect(user).toHaveProperty('color')
+})
